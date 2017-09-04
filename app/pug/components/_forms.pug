@@ -1,0 +1,29 @@
+#callback-form.zoom-anim-dialog.my-mfp-slide-bottom.mfp-hide
+  form(action="assets/mail.php" method="POST").default-form.js-send-form.default-form--popup
+    p.default-form__header.
+      Оставьте заявку, и мы свяжемся <br>
+      с вами в ближайшее время
+    .default-form__inner
+        .input-group.input-phone
+          input(type="text" name="phone" placeholder="Ваш телефон*" data-required).form-input
+        .input-group.input-email
+          input(type="text" name="email" placeholder="Ваш e-mail").form-input
+        button.btn.
+          Оставить заявку
+  span.js-close-button
+    i.icon-close
+
+#message-popup.zoom-anim-dialog.message-popup.my-mfp-slide-bottom.mfp-hide
+  p.message-popup__header.
+    Спасибо, ваша заявка
+    уже рассматривается нами
+  span.js-close-button
+    i.icon-close
+
+#message-error.zoom-anim-dialog.message-popup.my-mfp-slide-bottom.mfp-hide
+  p.message-popup__header
+    | Ошибка! Попробуйте позже. <br>
+    | Или свяжитесь с нами по телефону <br>
+    a(href="tel:+74951451054").empty-link.phone-link +7 (495) 145-10-54
+    span.js-close-button
+      i.icon-close

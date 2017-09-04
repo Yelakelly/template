@@ -1,0 +1,37 @@
+.btn
+    display inline-block
+    padding 12px 27px 7px 27px
+    background $brandColor
+    border 0
+    border-bottom 3px solid #cc0000
+    color #fff
+    text-decoration none
+    transition background 0.3s ease
+    font-family 'Lato Semibold', sans-serif
+    &:hover
+        background darken($brandColor, 10)
+        cursor pointer
+    &:focus
+        outline: 0
+    &--secondary
+        border 1px solid #000
+        color #000
+        background transparent
+    &--header
+        vertical-align middle
+        
+
+.btn-default
+    display inline-block
+    padding 17px 37px 13px 37px
+    transition all 0.3s ease
+
+.btn-bordered
+    display inline-block
+    text-decoration none
+    color #fff
+    padding 10px 35px
+    border 1px solid #e7e7e7
+    transition background 0.3s ease
+    &:hover
+        background rgba(0,0,0,0.8)

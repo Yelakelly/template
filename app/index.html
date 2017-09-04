@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="">
+    <meta name="theme-color" content="#eff0f4">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="keywords" content="">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <title>RetailNovostroy</title>
+<!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/4.0.1/placeholders.min.js"></script><![endif]-->
+
+<!--build:css css/style.min.css -->
+    <link rel="stylesheet" href="libs/slick-carousel/slick/slick-theme.css">
+    <link rel="stylesheet" href="libs/slick-carousel/slick/slick.css">
+    <link rel="stylesheet" href="libs/magnific-popup/dist/magnific-popup.css">
+    <link rel="stylesheet" href="css/selectric.css">
+    <link rel="stylesheet" href="css/nouislider.min.css">
+    <link rel="stylesheet" href="css/style.css">
+<!-- endbuild -->
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <div class="site-header__left">
+          <div class="logo"><a class="empty-link logo__text" href="/">Retail<span>Novostroy</span></a></div>
+        </div>
+        <div class="site-header__right">
+          <div class="site-header__controls"><a class="empty-link phone-link phone-link--header" href="tel:+74951451054">+7 (495) 145-10-54</a><a class="btn btn--header js-form-popup" href="#callback-form">Заказать звонок</a></div>
+        </div>
+      </div>
+    </header>
+    <section class="hero">
+      <div class="hero__inner">
+        <div class="container">
+          <p class="hero__text">
+            Торговые помещения в новостройках Москвы <br>
+            от Кремля до ТТК
+          </p>
+          <p class="hero__subtext">
+            Прямые инвестиции в коммерческую недвижимость <br>
+            Средняя доходность от 13,5%
+          </p>
+          <div class="hero__controls">
+            <div class="toggle">
+              <div class="toggle__button btn-default is-active" data-filter="1">Купить</div>
+              <div class="toggle__button btn-default" data-filter="0">Арендовать</div>
+            </div><a class="js-nav-link btn btn-default" href="#search">Начать поиск</a>
+          </div>
+        </div>
+      </div>
+      <section class="advantages">
+        <div class="container">
+          <div class="advantages__inner">
+            <div class="advantages__left">
+              <div class="advantages-carousel">
+                <div class="advantages-carousel__col"><i class="advantages-carousel__icon icon-database"></i>
+                  <div class="advantages-carousel__text-block">
+                    <p class="advantages-carousel__header">Доступ к базе</p>
+                    <p class="advantages-carousel__text">
+                      Получите доступ к лучшим предложениям в сфере коммерческой недвижимости
+                      Москвы. Мы каждый день обновляем и пополняем для своих клиентов.
+                    </p>
+                  </div>
+                </div>
+                <div class="advantages-carousel__col"><i class="advantages-carousel__icon icon-globe"></i>
+                  <div class="advantages-carousel__text-block">
+                    <p class="advantages-carousel__header">Поиск недвижимости</p>
+                    <p class="advantages-carousel__text">
+                      Поможем вам найти подходящую
+                      недвижимость в соответствии <br>
+                      с потребностями.
+                    </p>
+                  </div>
+                </div>
+                <div class="advantages-carousel__col"><i class="advantages-carousel__icon icon-man"></i>
+                  <div class="advantages-carousel__text-block">
+                    <p class="advantages-carousel__header">Сопровождение</p>
+                    <p class="advantages-carousel__text">Мы окажем вам полную поддержку в сопровождении сделок, а также проконсультируем по всем вопросам, касающимся коммерческой недвижимости.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="advantages__right">
+              <p class="advantages__helper">
+                Хотите воспользоваться <br>
+                нашей помощью?
+              </p><a class="btn-bordered js-form-popup" href="#callback-form">Оставить заявку</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+    <section class="catalog">
+      <div class="catalog__inner">
+        <p class="default-header">Найдем лучшее место для вашего бизнеса</p>
+        <div class="container">
+          <div class="search" id="search">
+            <div class="select-box">
+              <label class="select-box__label" for="#apartment-type">Вы хотите:</label>
+              <select class="select-box__control" id="apartment-type" name="apartment-type">
+                <option value="rent">Арендовать</option>
+                <option value="purchase" selected>Купить</option>
+              </select>
+            </div>
+            <div class="range-box">
+              <p class="range-box__label">Площадь: <span id="filter-area-result"></span></p>
+              <div class="range-slider" id="filter-area"></div>
+              <div class="range-box__helper">
+                <div class="range-box__helper-left">0 м<sup>2</sup></div>
+                <div class="range-box__helper-right">12000 м<sup>2</sup></div>
+              </div>
+              <input type="hidden" name="filter-area-from">
+              <input type="hidden" name="filter-area-to">
+            </div>
+            <div class="range-box">
+              <p class="range-box__label">Стоимость: <span id="filter-price-result"></span></p>
+              <div class="range-slider" id="filter-price"></div>
+              <div class="range-box__helper">
+                <div class="range-box__helper-left">50 тыс.</div>
+                <div class="range-box__helper-right">5 млн.</div>
+              </div>
+            </div>
+            <input type="hidden" name="filter-price-from">
+            <input type="hidden" name="filter-price-to">
+            <div class="select-box">
+              <label class="select-box__label" for="#sort-by-time">Сортировать:</label>
+              <select class="select-box__control" id="sort-by-time" name="sort-by-time">
+                <option value="new">По новизне</option>
+                <option value="price">По цене</option>
+              </select>
+            </div>
+            <button class="btn">Начать поиск</button>
+          </div>
+          <div class="apartments">
+            <div class="apartments__inner"><a class="apartments__link" href="catalog.html">
+                <div class="apartments__col">
+                  <div class="apartments__col-inner" style="background:url(img/thumb.jpg) 50% 50% no-repeat;" data-images="{&quot;images&quot;:[&quot;http://placehold.it/400/ffffff/&quot;,&quot;http://placehold.it/400/eeeeee/&quot;,&quot;http://placehold.it/400/000000/&quot;]}">
+                    <div class="apartments__info">
+                      <p class="apartments__id">ID <span>923234</span></p>
+                      <div class="apartments__wrapper">
+                        <p class="apartments__location">
+                          Московская 90 <br>
+                          М. СОКОЛЬНИКИ
+                        </p>
+                        <p class="apartments__area">102 м<sup>2</sup></p>
+                        <p class="apartments__price">58 000 000 р.</p>
+                        <p class="apartments__meter">575 000 р/м<sup>2</sup></p>
+                      </div>
+                    </div>
+                  </div>
+                </div></a><a class="apartments__link" href="catalog.html">
+                <div class="apartments__col">
+                  <div class="apartments__col-inner" style="background:url(img/thumb.jpg) 50% 50% no-repeat;" data-images="{&quot;images&quot;:[&quot;http://placehold.it/400/ffffff/&quot;,&quot;http://placehold.it/400/eeeeee/&quot;,&quot;http://placehold.it/400/000000/&quot;]}">
+                    <div class="apartments__info">
+                      <p class="apartments__id">ID <span>923234</span></p>
+                      <div class="apartments__wrapper">
+                        <p class="apartments__location">
+                          Московская 90 <br>
+                          М. СОКОЛЬНИКИ
+                        </p>
+                        <p class="apartments__area">102 м<sup>2</sup></p>
+                        <p class="apartments__price">58 000 000 р.</p>
+                        <p class="apartments__meter">575 000 р/м<sup>2</sup></p>
+                      </div>
+                    </div>
+                  </div>
+                </div></a><a class="apartments__link" href="catalog.html">
+                <div class="apartments__col">
+                  <div class="apartments__col-inner" style="background:url(img/thumb.jpg) 50% 50% no-repeat;" data-images="{&quot;images&quot;:[&quot;http://placehold.it/400/ffffff/&quot;,&quot;http://placehold.it/400/eeeeee/&quot;,&quot;http://placehold.it/400/000000/&quot;]}">
+                    <div class="apartments__info">
+                      <p class="apartments__id">ID <span>923234</span></p>
+                      <div class="apartments__wrapper">
+                        <p class="apartments__location">
+                          Московская 90 <br>
+                          М. СОКОЛЬНИКИ
+                        </p>
+                        <p class="apartments__area">102 м<sup>2</sup></p>
+                        <p class="apartments__price">58 000 000 р.</p>
+                        <p class="apartments__meter">575 000 р/м<sup>2</sup></p>
+                      </div>
+                    </div>
+                  </div>
+                </div></a><a class="apartments__link" href="catalog.html">
+                <div class="apartments__col">
+                  <div class="apartments__col-inner" style="background:url(img/thumb.jpg) 50% 50% no-repeat;" data-images="{&quot;images&quot;:[&quot;http://placehold.it/400/ffffff/&quot;,&quot;http://placehold.it/400/eeeeee/&quot;,&quot;http://placehold.it/400/000000/&quot;]}">
+                    <div class="apartments__info">
+                      <p class="apartments__id">ID <span>923234</span></p>
+                      <div class="apartments__wrapper">
+                        <p class="apartments__location">
+                          Московская 90 <br>
+                          М. СОКОЛЬНИКИ
+                        </p>
+                        <p class="apartments__area">102 м<sup>2</sup></p>
+                        <p class="apartments__price">58 000 000 р.</p>
+                        <p class="apartments__meter">575 000 р/м<sup>2</sup></p>
+                      </div>
+                    </div>
+                  </div>
+                </div></a><a class="apartments__link" href="catalog.html">
+                <div class="apartments__col">
+                  <div class="apartments__col-inner" style="background:url(img/thumb.jpg) 50% 50% no-repeat;" data-images="{&quot;images&quot;:[&quot;http://placehold.it/400/ffffff/&quot;,&quot;http://placehold.it/400/eeeeee/&quot;,&quot;http://placehold.it/400/000000/&quot;]}">
+                    <div class="apartments__info">
+                      <p class="apartments__id">ID <span>923234</span></p>
+                      <div class="apartments__wrapper">
+                        <p class="apartments__location">
+                          Московская 90 <br>
+                          М. СОКОЛЬНИКИ
+                        </p>
+                        <p class="apartments__area">102 м<sup>2</sup></p>
+                        <p class="apartments__price">58 000 000 р.</p>
+                        <p class="apartments__meter">575 000 р/м<sup>2</sup></p>
+                      </div>
+                    </div>
+                  </div>
+                </div></a><a class="apartments__link" href="catalog.html">
+                <div class="apartments__col">
+                  <div class="apartments__col-inner" style="background:url(img/thumb.jpg) 50% 50% no-repeat;" data-images="{&quot;images&quot;:[&quot;http://placehold.it/400/ffffff/&quot;,&quot;http://placehold.it/400/eeeeee/&quot;,&quot;http://placehold.it/400/000000/&quot;]}">
+                    <div class="apartments__info">
+                      <p class="apartments__id">ID <span>923234</span></p>
+                      <div class="apartments__wrapper">
+                        <p class="apartments__location">
+                          Московская 90 <br>
+                          М. СОКОЛЬНИКИ
+                        </p>
+                        <p class="apartments__area">102 м<sup>2</sup></p>
+                        <p class="apartments__price">58 000 000 р.</p>
+                        <p class="apartments__meter">575 000 р/м<sup>2</sup></p>
+                      </div>
+                    </div>
+                  </div>
+                </div></a><a class="apartments__link" href="catalog.html">
+                <div class="apartments__col">
+                  <div class="apartments__col-inner" style="background:url(img/thumb.jpg) 50% 50% no-repeat;" data-images="{&quot;images&quot;:[&quot;http://placehold.it/400/ffffff/&quot;,&quot;http://placehold.it/400/eeeeee/&quot;,&quot;http://placehold.it/400/000000/&quot;]}">
+                    <div class="apartments__info">
+                      <p class="apartments__id">ID <span>923234</span></p>
+                      <div class="apartments__wrapper">
+                        <p class="apartments__location">
+                          Московская 90 <br>
+                          М. СОКОЛЬНИКИ
+                        </p>
+                        <p class="apartments__area">102 м<sup>2</sup></p>
+                        <p class="apartments__price">58 000 000 р.</p>
+                        <p class="apartments__meter">575 000 р/м<sup>2</sup></p>
+                      </div>
+                    </div>
+                  </div>
+                </div></a><a class="apartments__link" href="catalog.html">
+                <div class="apartments__col">
+                  <div class="apartments__col-inner" style="background:url(img/thumb.jpg) 50% 50% no-repeat;" data-images="{&quot;images&quot;:[&quot;http://placehold.it/400/ffffff/&quot;,&quot;http://placehold.it/400/eeeeee/&quot;,&quot;http://placehold.it/400/000000/&quot;]}">
+                    <div class="apartments__info">
+                      <p class="apartments__id">ID <span>923234</span></p>
+                      <div class="apartments__wrapper">
+                        <p class="apartments__location">
+                          Московская 90 <br>
+                          М. СОКОЛЬНИКИ
+                        </p>
+                        <p class="apartments__area">102 м<sup>2</sup></p>
+                        <p class="apartments__price">58 000 000 р.</p>
+                        <p class="apartments__meter">575 000 р/м<sup>2</sup></p>
+                      </div>
+                    </div>
+                  </div>
+                </div></a><a class="apartments__link" href="catalog.html">
+                <div class="apartments__col">
+                  <div class="apartments__col-inner" style="background:url(img/thumb.jpg) 50% 50% no-repeat;" data-images="{&quot;images&quot;:[&quot;http://placehold.it/400/ffffff/&quot;,&quot;http://placehold.it/400/eeeeee/&quot;,&quot;http://placehold.it/400/000000/&quot;]}">
+                    <div class="apartments__info">
+                      <p class="apartments__id">ID <span>923234</span></p>
+                      <div class="apartments__wrapper">
+                        <p class="apartments__location">
+                          Московская 90 <br>
+                          М. СОКОЛЬНИКИ
+                        </p>
+                        <p class="apartments__area">102 м<sup>2</sup></p>
+                        <p class="apartments__price">58 000 000 р.</p>
+                        <p class="apartments__meter">575 000 р/м<sup>2</sup></p>
+                      </div>
+                    </div>
+                  </div>
+                </div></a>
+              <div class="apartments__button"><a class="js-more-apartments btn" href="#show-more" data-limit="5">Загрузить еще</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <div class="site-footer__left">
+          <form class="default-form js-send-form" action="asstes/mail.php">
+            <p class="default-form__header">
+              Оставьте заявку <br>
+              и мы свяжемся с вами
+            </p>
+            <div class="default-form__inner">
+              <div class="input-group input-phone">
+                <input class="form-input" type="text" name="phone" placeholder="Ваш телефон*" data-required>
+              </div>
+              <div class="input-group input-email">
+                <input class="form-input" type="text" name="email" placeholder="Ваш e-mail">
+              </div>
+              <button class="btn">Оставить заявку</button>
+            </div>
+          </form>
+        </div>
+        <div class="site-footer__right">
+          <div class="site-map" id="map"></div>
+        </div>
+      </div>
+    </footer>
+    <div class="zoom-anim-dialog my-mfp-slide-bottom mfp-hide" id="callback-form">
+      <form class="default-form js-send-form default-form--popup" action="assets/mail.php" method="POST">
+        <p class="default-form__header">
+          Оставьте заявку, и мы свяжемся <br>
+          с вами в ближайшее время
+        </p>
+        <div class="default-form__inner">
+          <div class="input-group input-phone">
+            <input class="form-input" type="text" name="phone" placeholder="Ваш телефон*" data-required>
+          </div>
+          <div class="input-group input-email">
+            <input class="form-input" type="text" name="email" placeholder="Ваш e-mail">
+          </div>
+          <button class="btn">Оставить заявку</button>
+        </div>
+      </form><span class="js-close-button"><i class="icon-close"></i></span>
+    </div>
+    <div class="zoom-anim-dialog message-popup my-mfp-slide-bottom mfp-hide" id="message-popup">
+      <p class="message-popup__header">
+        Спасибо, ваша заявка
+        уже рассматривается нами
+      </p><span class="js-close-button"><i class="icon-close"></i></span>
+    </div>
+    <div class="zoom-anim-dialog message-popup my-mfp-slide-bottom mfp-hide" id="message-error">
+      <p class="message-popup__header">
+        Ошибка! Попробуйте позже. <br>
+        Или свяжитесь с нами по телефону <br><a class="empty-link phone-link" href="tel:+74951451054">+7 (495) 145-10-54</a><span class="js-close-button"><i class="icon-close"></i></span>
+      </p>
+    </div>
+<!--build:js js/script.min.js -->
+    <script src="libs/jquery/dist/jquery.min.js"></script>
+    <script src="libs/slick-carousel/slick/slick.min.js"></script>
+    <script src="libs/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.selectric.min.js"></script>
+    <script src="js/nouislider.min.js"></script>
+    <script src="js/tmpl.min.js"></script>
+    <script src="js/main.js"></script>
+<!-- endbuild -->
+    <script type="text/x-tmpl" id="tmpl-catalog-col"><a class="appartments__link" href="{%=o.link%}">
+        <div class="appartments__col">
+          <div class="appartments__col-inner" style="background:url({%=o.image%}) 50% 50% no-repeat;" data-images="{%=o.gallery%}">
+            <div class="appartments__info">
+              <p class="appartments__id">ID <span>{%=o.id%}</span></p>
+              <div class="appartments__wrapper">
+                <p class="appartments__location">
+                  {%=o.location%} <br>
+                  {%=o.metro%}
+                </p>
+                <p class="appartments__area">{%=o.area%} м<sup>2</sup></p>
+                <p class="appartments__price">{%=o.price%} р.</p>
+                <p class="appartments__meter">{%=o.meter%} р/м<sup>2</sup></p>
+              </div>
+            </div>
+          </div>
+        </div></a></script>
+    <script>
+      function initMap() {
+        var location = {lat: 55.740466 , lng:37.617070};
+        // Create a map object and specify the DOM element for display.
+       
+        var styledMapType = new google.maps.StyledMapType([
+              {
+                "elementType": "geometry",
+                "stylers": [
+                  {
+                    "color": "#f5f5f5"
+                  }
+                ]
+              },
+              {
+                "elementType": "labels.icon",
+                "stylers": [
+                  {
+                    "visibility": "off"
+                  }
+                ]
+              },
+              {
+                "elementType": "labels.text.fill",
+                "stylers": [
+                  {
+                    "color": "#616161"
+                  }
+                ]
+              },
+              {
+                "elementType": "labels.text.stroke",
+                "stylers": [
+                  {
+                    "color": "#f5f5f5"
+                  }
+                ]
+              },
+              {
+                "featureType": "administrative.land_parcel",
+                "elementType": "labels.text.fill",
+                "stylers": [
+                  {
+                    "color": "#bdbdbd"
+                  }
+                ]
+              },
+              {
+                "featureType": "poi",
+                "elementType": "geometry",
+                "stylers": [
+                  {
+                    "color": "#eeeeee"
+                  }
+                ]
+              },
+              {
+                "featureType": "poi",
+                "elementType": "labels.text.fill",
+                "stylers": [
+                  {
+                    "color": "#757575"
+                  }
+                ]
+              },
+              {
+                "featureType": "poi.park",
+                "elementType": "geometry",
+                "stylers": [
+                  {
+                    "color": "#e5e5e5"
+                  }
+                ]
+              },
+              {
+                "featureType": "poi.park",
+                "elementType": "labels.text.fill",
+                "stylers": [
+                  {
+                    "color": "#9e9e9e"
+                  }
+                ]
+              },
+              {
+                "featureType": "road",
+                "elementType": "geometry",
+                "stylers": [
+                  {
+                    "color": "#ffffff"
+                  }
+                ]
+              },
+              {
+                "featureType": "road.arterial",
+                "elementType": "labels.text.fill",
+                "stylers": [
+                  {
+                    "color": "#757575"
+                  }
+                ]
+              },
+              {
+                "featureType": "road.highway",
+                "elementType": "geometry",
+                "stylers": [
+                  {
+                    "color": "#dadada"
+                  }
+                ]
+              },
+              {
+                "featureType": "road.highway",
+                "elementType": "labels.text.fill",
+                "stylers": [
+                  {
+                    "color": "#616161"
+                  }
+                ]
+              },
+              {
+                "featureType": "road.local",
+                "elementType": "labels.text.fill",
+                "stylers": [
+                  {
+                    "color": "#9e9e9e"
+                  }
+                ]
+              },
+              {
+                "featureType": "transit.line",
+                "elementType": "geometry",
+                "stylers": [
+                  {
+                    "color": "#e5e5e5"
+                  }
+                ]
+              },
+              {
+                "featureType": "transit.station",
+                "elementType": "geometry",
+                "stylers": [
+                  {
+                    "color": "#eeeeee"
+                  }
+                ]
+              },
+              {
+                "featureType": "water",
+                "elementType": "geometry",
+                "stylers": [
+                  {
+                    "color": "#c9c9c9"
+                  }
+                ]
+              },
+              {
+                "featureType": "water",
+                "elementType": "labels.text.fill",
+                "stylers": [
+                  {
+                    "color": "#9e9e9e"
+                  }
+                ]
+              }
+        ],{name: 'Styled Map'});
+      
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: location,
+          scrollwheel: true,
+          zoom: 16,
+          disableDefaultUI: true,
+        });
+      
+        var image = {
+            url: 'img/map-marker.png',
+            scaledSize: new google.maps.Size(38, 52),
+            // The origin for this image is (0, 0).
+            origin: new google.maps.Point(0, 0),
+            // The anchor for this image is the base of the flagpole at (0, 32).
+            anchor: new google.maps.Point(0, 52)
+        };
+      
+        var marker = new google.maps.Marker({
+          position: location,
+          map: map,
+          icon: image
+        });
+      
+        google.maps.Map.prototype.setCenterWithOffset= function(latlng, offsetX, offsetY) {
+            var map = this;
+            var ov = new google.maps.OverlayView();
+            ov.onAdd = function() {
+                var proj = this.getProjection();
+                var aPoint = proj.fromLatLngToContainerPixel(latlng);
+                aPoint.x = aPoint.x+offsetX;
+                aPoint.y = aPoint.y+offsetY;
+                map.setCenter(proj.fromContainerPixelToLatLng(aPoint));
+            }; 
+            ov.draw = function() {}; 
+            ov.setMap(this); 
+        };
+      
+        map.mapTypes.set('styled_map', styledMapType);
+        map.setMapTypeId('styled_map');
+      
+        var latlng = new google.maps.LatLng(location.lat, location.lng);
+        
+        if($(window).width() > 1000){
+          map.setCenterWithOffset(latlng, 50, -30);
+        }
+      
+       }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAcA2EUgVrA4QjNORbasRh6S6SjM9yHFa0&amp;callback=initMap" async defer></script>
+  </body>
+</html>

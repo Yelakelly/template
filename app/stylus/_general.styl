@@ -1,0 +1,159 @@
+
+// Lato
+
+webfont('Lato Light', 'Lato/Light/Lato-Light')
+webfont('Lato Semibold', 'Lato/Semibold/Lato-Semibold')
+webfont('Lato Medium', 'Lato/Medium/Lato-Medium')
+webfont('Lato Heavy', 'Lato/Heavy/Lato-Heavy')
+webfont('Lato Regular', 'Lato/Regular/Lato-Regular')
+
+// Nexa
+
+webfont('Nexa Bold', 'Nexa/Bold/Nexa Bold')
+webfont('Nexa Light', 'Nexa/Light/Nexa Light')
+
+
+html,
+body
+  height: 100%
+
+body
+  position relative  
+
+body
+  font-family 'Lato Regular', sans-serif
+  font-size 16px
+
+hr
+    border 0
+    border-top 1px solid #908f8f
+    
+h1, h2, h3, h4, h5, h6
+  font-family "Lato Heavy", sans-serif
+
+.container
+    margin 0 auto
+    clearfix()
+    @media (min-width 800px)
+      width 768px
+      padding 0 10px
+    @media (min-width 1020px)
+      width 980px
+    @media(min-width 1140px)
+      width 1100px
+    @media (min-width 1280px)
+      width 1200px
+    @media (min-width 1430px)
+      width 1400px
+      padding 0px 100px
+
+.text-strong
+    font-family 'Lato Regular', sans-serif
+
+.text-with-icon
+    i
+      font-size 20px
+    a, span, i
+        display inline-block
+        vertical-align middle
+    & :nth-child(2)
+        padding-left 10px
+
+.text-highlight
+  color $brandColor
+
+.text-italic
+  font-style italic
+    
+.text-center
+  text-align center
+
+.empty-link
+  text-decoration none
+  color inherit
+  transition: opacity 0.3s ease
+  -webkit-backface-visibility hidden // jumping on hover - fixed
+  &:hover
+      opacity 0.8
+      
+  &:focus
+      opacity 0.8
+      color inherit
+
+.is-hidden
+  display none
+    
+.is-fixed
+  position fixed
+  top 0px
+  left 0px
+  width 100%
+  z-index 10
+
+.img-responsive
+  max-width 100%
+  display block
+
+.no-margin
+  margin 0
+
+for i in range(0px, 100px, 10px)
+  .mb-{i} 
+      margin-bottom i
+  .mt-{i} 
+      margin-top i
+
+@import "assets/libs/_blazon"
+@import "assets/libs/magnific-popup/_animation-slide"
+
+.slick-slider .slick-slide
+    display: none
+
+.slick-initialized.slick-slider .slick-slide,
+.slick-initialized.slick-slider .slick-slide:first-child
+    display: block
+
+.r-carousel
+  position  relative
+  
+  &__item
+    position relative
+    color = rgba(0,0,0,0.3)
+    overlay(color, 1)
+  
+  &__button
+    width  10%
+    position  absolute
+    height  100%
+    top 0
+    z-index  1000
+    
+  &__button--right
+    right 0
+  
+  &__button--left
+    left 0
+  
+  &__arrow-image
+    position  absolute
+    top 50%
+    transform translateY(-50%)
+    transition opacity 0.3s ease
+    &:hover
+      cursor pointer
+      opacity 0.7
+
+  
+  &__arrow-image--left
+    left 0
+    font-size 55px
+    color #868080
+    padding 30px 5px 30px 0px
+    background rgba(255,255,255,0.5)
+  
+  &__arrow-image--right
+    right 0
+    font-size 55px
+    color #868080
+    padding 30px 0px
+    background rgba(255,255,255,0.5)

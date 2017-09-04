@@ -1,0 +1,144 @@
+.form-control
+    position relative
+
+.form-header
+    font-family "Magistral", sans-serif
+    text-align center
+    margin 10px 0 20px 0
+    font-size 21px
+
+.input-group
+    margin-bottom 23px
+
+.form-input
+    display block
+    width 100%
+    height 43px
+    background #fff
+    border 0
+    border-radius 0
+    padding 0px 50px 0px 23px
+    &::placeholder
+        color #696969
+        transition color 0.3s ease
+    &:focus
+        outline 0px
+        &::placeholder
+            color transparent
+    &.is-error
+       border 2px solid $brandColor !important
+    &-textarea
+        resize none
+
+.input-phone,
+.input-email
+    position relative
+
+.input-phone:before,
+.input-email:before
+    content ''
+    display block
+    width 50px
+    height 100%
+    right 0
+    top 0
+    position absolute
+    background $brandColor
+
+.input-phone:after,
+.input-email:after
+    
+    top 50%
+    width 50px
+    text-align center
+    right 0
+    transform translateY(-50%)
+    position absolute
+    color #fff
+    font-size 22px
+
+.input-phone:after
+    font-family "Retail", sans-serif
+    content icon-smartphone
+    
+.input-email:after
+    content '@'
+    font-family 'Lato Light', sans-serif
+    
+.default-form
+    &__inner
+        padding-top 30px
+        clearfix()
+        
+    &__header
+        margin 0
+        font-size 30px
+        line-height 30px
+        font-family 'Lato Light', sans-serif
+        color #fff
+        
+    &__left,
+    &__right
+        float left
+        
+    &__left
+        width 50%
+        
+    &__right
+        width 50%
+        
+    &--popup
+        padding 60px 0
+        background #fff
+        
+        .form-input
+            &.is-error
+                border 2px solid $brandColor !important
+
+        & ^[0]__header
+            color #000
+            margin 20px 0 30px 0
+            font-size 24px
+        & ^[0]__inner
+            padding 0 80px
+        .form-input
+            background #f4f4f4
+    
+
+.js-close-button
+    position absolute
+    top 0
+    right 0
+    width 44px
+    height 44px
+    font-size 18px
+    line-height 48px
+    text-align center
+    color #fff
+    background $brandColor
+    transition background 0.3s ease
+    &:hover
+        cursor pointer
+        background darken($brandColor, 10)
+
+#callback-form
+    position relative
+    max-width 455px
+    margin 0 auto
+    text-align center
+    *
+        box-sizing border-box
+
+.message-popup
+    position relative
+    background #fff
+    margin 0 auto
+    max-width 455px
+    text-align center
+    
+    &__header
+        line-height 30px
+        font-size 24px
+        font-family 'Lato Light', sans-serif
+        margin 0
+        padding 65px 0 65px 0

@@ -1,0 +1,39 @@
+doctype html
+html(lang="ru")
+  head
+    block vars
+        - var title = ''
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
+    meta(name="format-detection" content="telephone=no")
+    meta(name="description" content=`${description}`)
+    meta(name="theme-color" content=`${themeColor}`)
+    meta(http-equiv="x-ua-compatible" content="ie=edge")
+    meta(name="keywords" content=`${keywords}`)
+    link(rel="icon" type="image/png" href="/favicon.png")
+    title= title
+    ='\n'
+    <!--[if lt IE 9]>
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/4.0.1/placeholders.min.js")
+    <![endif]-->
+    ='\n'
+    ='\n'
+    <!--build:css css/style.min.css -->
+    link(rel="stylesheet", href="css/style.css")
+    ='\n'
+    <!-- endbuild -->
+  body(class=`${(bodyClass || '')}`)
+      block header
+          include _header.pug
+      block content
+      block footer
+          include _footer.pug
+      block forms
+          include ../components/_forms.pug
+      block scripts
+          ='\n'
+          <!--build:js js/script.min.js -->
+          script(src="js/main.js")
+          ='\n'
+          <!-- endbuild -->
